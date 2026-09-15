@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Apify India Lead-Gen — Provider Reference (92 actors)</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f1117;color:#e8ebf2;font-family:-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.55}
+header{position:sticky;top:0;z-index:50;background:rgba(15,17,23,.94);backdrop-filter:blur(8px);border-bottom:1px solid #2a3142;padding:14px 24px}
+.hwrap{max-width:1500px;margin:0 auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+h1{font-size:1.2rem}
+h1 small{color:#9aa3b5;font-weight:400;font-size:.75rem;margin-left:10px}
+#search{background:#1c2230;border:1px solid #2a3142;color:#e8ebf2;padding:8px 14px;border-radius:8px;min-width:250px;font-size:.9rem}
+#search:focus{outline:2px solid #4f8cff}
+.cat-filter{display:flex;gap:6px;flex-wrap:wrap}
+.cat-filter button{background:#1c2230;color:#9aa3b5;border:1px solid #2a3142;padding:5px 10px;border-radius:20px;font-size:.72rem;cursor:pointer}
+.cat-filter button.on{background:#4f8cff;color:#fff;border-color:#4f8cff}
+main{max-width:1500px;margin:0 auto;padding:20px 24px 80px}
+.hero{color:#9aa3b5;font-size:.85rem;margin-bottom:8px;max-width:1100px}
+.hero b{color:#e8ebf2}
+.anchor{position:relative;top:-70px}
+.section-head{margin:34px 0 10px;border-bottom:1px solid #2a3142;padding-bottom:8px}
+.section-head h2{font-size:1.05rem;color:#4f8cff}
+.section-head p{color:#9aa3b5;font-size:.8rem}
+.cnt{color:#4f8cff}
+.actor-card{background:#161a24;border:1px solid #2a3142;border-radius:12px;margin:14px 0;overflow:hidden}
+.card-head{padding:16px 18px 12px}
+.card-title-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.card-title-row h3{font-size:1rem}
+.badge-cat{background:#22304d;color:#8fb3ff;font-size:.66rem;padding:3px 8px;border-radius:4px;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+.badge-prio{font-size:.66rem;padding:3px 8px;border-radius:4px;font-weight:700}
+.p-top{background:#0e3b24;color:#3ddc84}.p-high{background:#3d3310;color:#ffd166}.p-eval{background:#333a48;color:#b7c0d0}
+.card-sub{color:#9aa3b5;font-size:.78rem;margin-top:6px;font-family:'JetBrains Mono','Fira Code',Consolas,monospace;word-break:break-all}
+.card-sub a{color:#4f8cff;text-decoration:none}
+.stats{color:#6f7ac2;font-size:.7rem;margin-left:8px}
+.desc{color:#9aa3b5;font-size:.84rem;margin-top:8px}
+.note{background:#2b1f0e;border-left:3px solid #ffd166;padding:8px 12px;font-size:.78rem;margin-top:10px;color:#f0e0b8;border-radius:0 6px 6px 0}
+.pricing-row{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;font-size:.76rem;color:#9aa3b5}
+.price{background:#1c2230;border:1px solid #2a3142;padding:2px 8px;border-radius:4px}
+.price b{color:#ffd166}
+.badge-free{background:#241b1b;color:#ff9e9e;padding:2px 8px;border-radius:4px}
+.tabs{display:flex;border-top:1px solid #2a3142;border-bottom:1px solid #2a3142;background:#1c2230}
+.tab-btn{background:none;border:none;color:#9aa3b5;padding:10px 16px;font-size:.8rem;cursor:pointer}
+.tab-btn.active{color:#e8ebf2;border-bottom:2px solid #4f8cff;background:rgba(79,140,255,.08)}
+.tab-panel{display:none;padding:16px 18px}
+.tab-panel.active{display:block}
+.cmd-block{position:relative;background:#0a0d13;border:1px solid #2a3142;border-radius:8px;padding:12px}
+.curl-cmd{font-family:'JetBrains Mono','Fira Code',Consolas,monospace;font-size:.76rem;color:#b8c7e8;white-space:pre-wrap;word-break:break-all}
+.copy-btn{position:absolute;top:8px;right:8px;background:#1c2230;border:1px solid #2a3142;color:#9aa3b5;padding:4px 10px;border-radius:5px;cursor:pointer;font-size:.7rem}
+.copy-btn:hover{color:#e8ebf2}
+.api-note{color:#9aa3b5;font-size:.74rem;margin-top:8px;font-family:'JetBrains Mono',Consolas,monospace}
+.params-box{display:flex;flex-direction:column;gap:10px}
+.param-row{background:#1c2230;border:1px solid #2a3142;border-radius:8px;padding:10px 12px}
+.param-head{display:flex;gap:10px;align-items:center;margin-bottom:6px;flex-wrap:wrap}
+.pname{color:#ffd166;font-family:'JetBrains Mono',Consolas,monospace;font-size:.84rem}
+.ptype{color:#8fb3ff;font-size:.7rem;font-family:Consolas,monospace}
+.req{font-size:.66rem;padding:1px 6px;border-radius:3px}
+.req-yes{background:#0e3b24;color:#3ddc84}.req-no{background:#333a48;color:#b7c0d0}
+.pinput{width:100%;background:#0f1117;border:1px solid #2a3142;color:#e8ebf2;padding:7px 10px;border-radius:6px;font-family:Consolas,monospace;font-size:.78rem}
+.pinput:focus{outline:2px solid #4f8cff}
+.pdesc{color:#9aa3b5;font-size:.7rem;margin-top:4px}
+.params-prose pre{background:#0a0d13;border:1px solid #2a3142;border-radius:8px;padding:12px;font-family:Consolas,monospace;font-size:.74rem;color:#b8c7e8;white-space:pre-wrap;max-height:320px;overflow:auto}
+.gen-row{margin-top:12px;display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.gen-btn{background:#4f8cff;color:#fff;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;font-size:.78rem}
+.gen-btn:hover{filter:brightness(1.15)}
+.gen-out{font-family:Consolas,monospace;font-size:.7rem;color:#3ddc84;word-break:break-all;max-width:100%}
+.raw-json{background:#0a0d13;border:1px solid #2a3142;border-radius:8px;padding:14px;font-family:Consolas,monospace;font-size:.73rem;color:#c9e3c9;white-space:pre-wrap;max-height:420px;overflow:auto}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.card-field{background:#1c2230;border:1px solid #2a3142;border-radius:8px;padding:8px 10px}
+.card-key{color:#ffd166;font-size:.68rem;font-family:Consolas,monospace;word-break:break-all}
+.card-val{color:#e8ebf2;font-size:.78rem;margin-top:3px;word-break:break-word}
+.field-table{margin-top:12px}
+.field-table table{width:100%;border-collapse:collapse;font-size:.73rem}
+.field-table th{background:#1c2230;color:#9aa3b5;text-align:left;padding:6px 8px;border:1px solid #2a3142}
+.field-table td{padding:5px 8px;border:1px solid #2a3142}
+.prose-out pre{background:#1c2230;border-radius:8px;padding:12px;font-family:Consolas,monospace;font-size:.72rem;white-space:pre-wrap}
+footer{padding:24px;text-align:center;color:#9aa3b5;font-size:.76rem;border-top:1px solid #2a3142;margin-top:40px}
+#count{color:#9aa3b5;font-size:.8rem;margin-bottom:10px}
+em{color:#9aa3b5}
+a{color:#4f8cff}
+</style>
+</head>
+<body>
+<header>
+  <div class="hwrap">
+    <h1>🔍 Apify India Lead-Gen — Provider Reference <small>92 actors · researched 2026-09-15 · extracted from official store READMEs</small></h1>
+    <input id="search" type="text" placeholder="Search… (justdial, zauba, mca, instagram, gst, naukri…)"/>
+    <div class="cat-filter" id="catfilter"></div>
+  </div>
+</header>
+<main>
+  <div class="hero">
+    <b>What this is:</b> every India-relevant lead-generation actor found in the Apify Store, with its <b>real API call</b>, its <b>documented input fields</b> (editable — hit “Generate curl”), its <b>verbatim sample response</b>, and the same data as readable cards. Nothing here is invented: inputs, outputs and prices come from each actor's official store page. ⚠️ notes flag thin docs, misleading names & caveats. Prices shown are the FREE-tier per-item rates (BRONZE→DIAMOND users pay less).
+  </div>
+  <div id="count"></div>
+  <div id="cards"></div>
+  <script src="frag0.js"></script>
+  <script src="frag1.js"></script>
+  <script src="frag2.js"></script>
+  <script src="frag3.js"></script>
+  <script src="frag4.js"></script>
+  <script src="frag5.js"></script>
+  <script src="frag6.js"></script>
+  <script src="frag7.js"></script>
+  <script src="frag8.js"></script>
+  <script src="frag9.js"></script>
+  <script src="frag10.js"></script>
+  <script src="frag11.js"></script>
+  <script src="frag12.js"></script>
+</main>
+<footer>
+  Apify India Lead-Gen Reference · verify with a small test run before production · India DPDP Act 2023: B2B outreach with opt-out handling, never resell raw PII · generated from live store data
+</footer>
+<script>
+let activeCat = 'all';
+const CATS = {"property": "\ud83c\udfe0", "b2b": "\ud83c\udfed", "buyer": "\ud83c\udfaf", "directory": "\ud83d\udcc7", "linkedin": "\ud83d\udcbc", "registry": "\ud83c\udfdb\ufe0f", "tenders": "\ud83d\udccb", "trade": "\ud83d\udea2", "jobs": "\ud83d\udcbc", "enrich": "\ud83d\udcf1", "startup": "\ud83d\ude80", "niche": "\ud83e\ude7a"};
+
+function render(){
+  const q = document.getElementById('search').value.toLowerCase();
+  const cards = document.querySelectorAll('.actor-card');
+  let visible = 0;
+  cards.forEach(c => {
+    const show = (activeCat === 'all' || c.dataset.cat === activeCat) &&
+      (!q || c.dataset.name.includes(q));
+    c.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  document.getElementById('count').textContent = 'Showing ' + visible + ' / ' + cards.length + ' actors · prices are FREE-tier, per result/item';
+}
+
+function buildFilters(){
+  const f = document.getElementById('catfilter');
+  const all = [['all','All']].concat(Object.entries(CATS));
+  all.forEach(([k,label]) => {
+    const b = document.createElement('button');
+    b.textContent = label;
+    b.onclick = () => {
+      activeCat = k;
+      document.querySelectorAll('.cat-filter button').forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      render();
+    };
+    f.appendChild(b);
+  });
+  f.firstChild.classList.add('on');
+}
+
+function copyText(btn){
+  const pre = btn.parentElement.querySelector('.curl-cmd');
+  navigator.clipboard.writeText(pre.textContent).then(() => {
+    const old = btn.textContent; btn.textContent = '✅ Copied';
+    setTimeout(() => btn.textContent = old, 1500);
+  });
+}
+
+function generateCurl(btn){
+  const card = btn.closest('.actor-card');
+  const slug = card.id.replace('card-', '').replace('~', '/');
+  const out = {};
+  card.querySelectorAll('.pinput').forEach(inp => {
+    const name = inp.dataset.param;
+    const raw = inp.value.trim();
+    if (!raw) return;
+    let val = raw;
+    if (val === 'true' || val === 'false') val = val === 'true';
+    else if (!isNaN(val) && val !== '') val = Number(val);
+    else if (val.includes(',')) val = val.split(',').map(s => s.trim());
+    out[name] = val;
+  });
+  if (!Object.keys(out).length) out.maxResults = 10;
+  const json = JSON.stringify(out, null, 2);
+  const curl = 'curl -X POST "https://api.apify.com/v2/acts/' + slug.replace('/','~') + '/runs?token=YOUR_APIFY_TOKEN" -H "Content-Type: application/json" -d \'' + json.replace(/\'/g, "'\\''") + '\'';
+  card.querySelector('.gen-out').textContent = curl;
+  navigator.clipboard.writeText(curl).then(() => {
+    btn.textContent = '✅ Copied';
+    setTimeout(() => btn.textContent = '⚡ Generate curl from form', 2000);
+  });
+}
+
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('tab-btn')) {
+    const card = e.target.closest('.actor-card');
+    const tab = e.target.dataset.tab;
+    card.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b === e.target));
+    card.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === tab));
+  }
+});
+
+document.getElementById('search').addEventListener('input', render);
+buildFilters(); render();
+</script>
+</body>
+</html>
